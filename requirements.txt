@@ -1,0 +1,36 @@
+# Core
+torch>=2.1.0
+torchvision>=0.16.0
+numpy>=1.24.0
+opencv-python>=4.8.0
+Pillow>=10.0.0
+pyyaml>=6.0
+
+# Detection frameworks
+ultralytics>=8.1.0          # YOLOv8
+transformers>=4.36.0         # RT-DETR (via HuggingFace)
+pycocotools>=2.0.7
+
+# DINO (official repo dependencies)
+timm>=0.9.12
+scipy>=1.11.0
+
+# Explainability
+grad-cam>=1.4.8
+
+# Statistical analysis
+statsmodels>=0.14.0
+scikit-learn>=1.3.0
+
+# Visualization
+matplotlib>=3.8.0
+seaborn>=0.13.0
+
+# Utilities
+tqdm>=4.66.0
+pandas>=2.1.0
+albumentations>=1.3.1        # augmentation (keep IDENTICAL across models)
+
+# Notebooks
+jupyter>=1.0.0
+ipykernel>=6.27.0

@@ -1,0 +1,24 @@
+# Data
+data/raw/*
+data/processed/**/*.jpg
+data/processed/**/*.png
+data/corrupted/**/*.jpg
+!**/.gitkeep
+
+# Model weights
+*.pt
+*.pth
+*.onnx
+results/**/weights/*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store

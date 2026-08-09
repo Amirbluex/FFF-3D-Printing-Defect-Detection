@@ -59,7 +59,11 @@ def check_class_count(coco_data, expected_classes):
 def check_images_exist(coco_data, split_dir):
     missing_files = []
     for img in coco_data["images"]:
-        img_path = split_dir / img["file_name"]
+        # Check images/ subfolder first (post-convert_annotations layout),
+        # fall back to split root (pre-convert_annotations layout)
+        img_path = split_dir / "images" / img["file_name"]
+        if not img_path.exists():
+            img_path = split_dir / img["file_name"]
         if not img_path.exists():
             missing_files.append(img["file_name"])
     if missing_files:
@@ -146,7 +150,9 @@ def visualize_random_samples(all_split_data, n_samples):
     axes = axes.flatten() if n_rows > 1 else [axes] if n_cols == 1 else axes
 
     for i, (split_name, split_dir, img_info, anns, cat_id_to_name) in enumerate(sample):
-        img_path = split_dir / img_info["file_name"]
+        img_path = split_dir / "images" / img_info["file_name"]
+        if not img_path.exists():
+            img_path = split_dir / img_info["file_name"]
         img = cv2.imread(str(img_path))
         if img is None:
             continue

@@ -195,6 +195,8 @@ def write_split_files(merged, split_assignment):
     """
     for split in ["train", "val", "test"]:
         split_dir = OUTPUT_DIR / split
+        if split_dir.exists():
+            shutil.rmtree(split_dir)
         split_dir.mkdir(parents=True, exist_ok=True)
 
         split_img_ids = {i for i, s in split_assignment.items() if s == split}

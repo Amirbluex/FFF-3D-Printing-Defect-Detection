@@ -1,0 +1,10 @@
+train: C:\files\IKIU\Deep Learning\Final Project\fff-defect-detection-comparison\data\processed\train\images
+val: C:\files\IKIU\Deep Learning\Final Project\fff-defect-detection-comparison\data\processed\val\images
+test: C:\files\IKIU\Deep Learning\Final Project\fff-defect-detection-comparison\data\processed\test\images
+nc: 5
+names:
+- Cracking
+- Layer_shifting
+- Off_platform
+- Stringing
+- Warping

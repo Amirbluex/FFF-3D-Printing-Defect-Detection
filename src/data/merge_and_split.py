@@ -34,7 +34,7 @@ from collections import defaultdict
 ANNOTATIONS_DIR = Path("data/annotations")   
 RAW_IMAGES_DIR = Path("data/raw")             # original per-class image folders
 OUTPUT_DIR = Path("data/processed")           # train/val/test destination
-SPLIT_RATIOS = {"train": 0.7, "val": 0.15, "test": 0.15}
+SPLIT_RATIOS = {"train": 0.8, "val": 0.1, "test": 0.1}
 SEED = 42
 
 CATEGORY_JSON_MAP = {

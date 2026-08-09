@@ -1,0 +1,35 @@
+dataset:
+  name: "fff_defect_dataset"
+  root_dir: "./data"
+  raw_dir: "./data/raw"
+  processed_dir: "./data/processed"
+  annotations_dir: "./data/annotations"
+
+  classes:
+    - "Cracking"
+    - "Layer_shifting"
+    - "Off_platform"
+    - "Stringing"
+    - "Warping"
+
+  num_classes: 5
+
+  splits:
+    train: "./data/processed/train"
+    val: "./data/processed/val"
+    test: "./data/processed/test"
+
+  split_ratio:
+    # Matches base paper's 8:1:1 split (Section 2.3)
+    train: 0.8
+    val: 0.1
+    test: 0.1
+
+  annotation_format: "coco"
+  image_size: [640, 640]
+
+verification:
+  check_image_count: true
+  check_annotation_count: true
+  check_class_distribution: true
+  visualize_n_samples: 20

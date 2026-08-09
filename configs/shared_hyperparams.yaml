@@ -1,0 +1,43 @@
+# Values extracted directly from the base paper (Table 2, Section 3.2, Section 2.3):
+# Hu et al. (2024), "Real-time defect detection for FFF 3D printing using
+# lightweight model deployment", Int J Adv Manuf Technol 134:4871-4885
+
+training:
+  epochs: 200
+  batch_size: 64 # NOTE: paper's value. Reduce if GPU (RTX 4050 6GB) hits OOM --
+                 # consider gradient accumulation to preserve effective batch size.
+  optimizer: "Adam"
+  imgsz: 640
+  workers: 8
+  seed: 42            # our own choice for reproducibility
+
+hardware:
+  # Paper trained on RTX 2080 Ti (11GB), tested on RTX 1050 Ti (4GB),
+  # I will try to have it on my own GPU which is RTX 4050 (6GB) for both
+  # train and test pipeline.
+  device: "cuda:0"
+  train_gpu: "RTX 4050 6GB"
+  test_gpu: "RTX 4050 6GB"
+
+augmentation:
+  grayscale_conversion:
+    enabled: true
+    replicate_to_3_channel: true   # required for pretrained RGB backbone compatibility (RT-DETR, DINO)
+  elastic_transformation:
+    enabled: true
+    # Paper does not specify exact sigma/alpha (Section 3.2). Using
+    # albumentations library standard defaults as a documented substitute.
+    alpha: 1
+    sigma: 50
+  rotation:
+    angles_degrees: [-45, 45]
+
+dataset_split:
+  ratio: "8:1:1"    # train:val:test, as used in the paper
+  train: 0.8
+  val: 0.1
+  test: 0.1
+
+evaluation:
+  metrics: ["precision", "recall", "mAP50", "F1", "FPS", "parameters", "GFLOPs"]
+  iou_threshold_map50: 0.5

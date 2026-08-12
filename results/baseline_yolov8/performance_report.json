@@ -1,0 +1,27 @@
+{
+  "model": "YOLOv8n",
+  "paper_batch_size": 64,
+  "actual_batch_size_used": 64,
+  "batch_size_reduced_due_to_hardware": false,
+  "epochs_configured": 200,
+  "epochs_actually_run": 151,
+  "best_epoch": 121,
+  "early_stopped": true,
+  "optimizer": "Adam",
+  "imgsz": 640,
+  "parameters": 3011823,
+  "GFLOPs": 8.2,
+  "FPS": 64.69,
+  "model_size_MB": 5.96,
+  "speed_breakdown_ms": {
+    "preprocess": 3.679981538460617,
+    "inference": 7.768780512820647,
+    "loss": 0.001586153846871569,
+    "postprocess": 4.009276410258094
+  },
+  "mAP50": 0.8901968718822644,
+  "mAP50_95": 0.5547664551240629,
+  "precision": 0.9293011999264371,
+  "recall": 0.8310450642501912,
+  "training_time_hours": 2.229
+}

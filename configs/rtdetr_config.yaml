@@ -1,0 +1,10 @@
+model:
+  name: "rtdetr"
+  variant: "rtdetr-l"
+
+overrides:
+  # RT-DETR's deformable attention (grid_sample ops) is prone to NaN
+  # under mixed precision at the paper's lr0=0.01 (tuned for YOLOv8's
+  # conv-based architecture, not transformer attention). Reduced by
+  # 100x rather than disabling AMP entirely, to preserve training speed.
+  lr0: 0.0001

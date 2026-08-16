@@ -23,5 +23,6 @@
   "mAP50_95": 0.5547664551240629,
   "precision": 0.9293011999264371,
   "recall": 0.8310450642501912,
-  "training_time_hours": 2.229
+  "training_time_hours": 10.0,
+  "training_time_note": "Cumulative across multiple resumed sessions (interrupted by system restart); corrected from initially-recorded single-session duration."
 }

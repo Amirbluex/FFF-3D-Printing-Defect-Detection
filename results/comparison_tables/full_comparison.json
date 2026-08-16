@@ -1,0 +1,50 @@
+{
+  "YOLOv8n": {
+    "precision": 0.9266,
+    "recall": 0.9044,
+    "f1_score": 0.9154,
+    "mean_iou": 0.8238,
+    "mean_dice": 0.9034,
+    "mAP50": 0.9201,
+    "mAP50_95": 0.6061,
+    "FPS": 22.71,
+    "GPU_memory_MB": 25.77,
+    "parameters": 3011823,
+    "GFLOPs": 8.2,
+    "model_size_MB": 5.96,
+    "training_time_hours": 10.0,
+    "inference_time_ms": 44.03
+  },
+  "RT-DETR-L": {
+    "precision": 0.94,
+    "recall": 0.9625,
+    "f1_score": 0.9511,
+    "mean_iou": 0.8309,
+    "mean_dice": 0.9076,
+    "mAP50": 0.9703,
+    "mAP50_95": 0.6518,
+    "FPS": 14.71,
+    "GPU_memory_MB": 243.98,
+    "parameters": 32816351,
+    "GFLOPs": 109.91,
+    "model_size_MB": 251.47,
+    "training_time_hours": 37.0,
+    "inference_time_ms": 67.98
+  },
+  "DEIMv2-Nano (DINO sub.)": {
+    "precision": 0.9133,
+    "recall": 0.9352,
+    "f1_score": 0.9241,
+    "mean_iou": 0.8297,
+    "mean_dice": 0.9069,
+    "mAP50": 0.9636,
+    "mAP50_95": 0.6552,
+    "FPS": 20.79,
+    "GPU_memory_MB": 91.67,
+    "parameters": 3556617,
+    "GFLOPs": null,
+    "model_size_MB": 13.75,
+    "training_time_hours": 1.3866629449526469,
+    "inference_time_ms": 48.1
+  }
+}

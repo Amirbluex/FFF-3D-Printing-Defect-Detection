@@ -27,5 +27,7 @@
   "precision": 0.9712679578760554,
   "recall": 0.9376888382536063,
   "epochs_actually_run": 61,
-  "stopped_reason": "manual stop after sustained plateau (patience threshold not yet formally met, but no meaningful improvement since ~epoch 30)"
+  "stopped_reason": "manual stop after sustained plateau (patience threshold not yet formally met, but no meaningful improvement since ~epoch 30)",
+  "training_time_hours": 37.0,
+  "training_time_note": "Cumulative across multiple resumed sessions (interrupted by system restarts, NaN-loss recovery, and manual early stop at plateau)."
 }

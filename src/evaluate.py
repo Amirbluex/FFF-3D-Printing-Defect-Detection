@@ -156,7 +156,7 @@ def evaluate_predictions(all_predictions, all_targets):
     }
 
 
-def run_yolo_family_inference(model_path, images_by_id, anns_by_image, coco_id_to_contiguous, model_type):
+def run_yolo_family_inference(model_path, images_by_id, anns_by_image, coco_id_to_contiguous, model_type, images_dir=None):
 
     ModelClass = YOLO if model_type == "yolov8" else RTDETR
     model = ModelClass(str(model_path))
@@ -167,7 +167,7 @@ def run_yolo_family_inference(model_path, images_by_id, anns_by_image, coco_id_t
     torch.cuda.reset_peak_memory_stats()
 
     for image_id, img_info in images_by_id.items():
-        img_path = TEST_DIR / "images" / img_info["file_name"]
+        img_path = (images_dir or TEST_DIR / "images") / img_info["file_name"]
 
         start = time.time()
         results = model.predict(str(img_path), verbose=False, conf=0.001)[0]
@@ -191,7 +191,7 @@ def run_yolo_family_inference(model_path, images_by_id, anns_by_image, coco_id_t
     return all_predictions, all_targets, fps, peak_memory_mb
 
 
-def run_dino_inference(checkpoint_path, images_by_id, anns_by_image, coco_id_to_contiguous):
+def run_dino_inference(checkpoint_path, images_by_id, anns_by_image, coco_id_to_contiguous, images_dir=None):
 
     model = Deimv2ForObjectDetection.from_pretrained(str(checkpoint_path))
     image_processor = AutoImageProcessor.from_pretrained(
@@ -207,7 +207,7 @@ def run_dino_inference(checkpoint_path, images_by_id, anns_by_image, coco_id_to_
 
     with torch.no_grad():
         for image_id, img_info in images_by_id.items():
-            img_path = TEST_DIR / "images" / img_info["file_name"]
+            img_path = (images_dir or TEST_DIR / "images") / img_info["file_name"]
             image = Image.open(img_path).convert("RGB")
 
             inputs = image_processor(images=image, return_tensors="pt").to(device)

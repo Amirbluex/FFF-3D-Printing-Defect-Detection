@@ -14,6 +14,8 @@ pycocotools>=2.0.7
 # DINO (official repo dependencies)
 timm>=0.9.12
 scipy>=1.11.0
+torchmetrics>=1.3.0
+accelerate>=1.1.0
 
 # Explainability
 grad-cam>=1.4.8

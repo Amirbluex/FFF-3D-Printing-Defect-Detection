@@ -1,0 +1,23 @@
+model:
+  name: "dino"
+  substitution: "DEIMv2 (HuggingFace Transformers)"
+  substitution_reason: >
+    Official IDEA-Research DINO requires custom CUDA operator compilation
+    (ms_deform_attn_cuda) targeting Python 3.7/PyTorch 1.9/CUDA 11.1.
+    This failed even in a separate compilation attempt on this machine's
+    setup. DEIMv2 (DETR with Improved Matching v2) is a legitimate,
+    actively-maintained successor in the same DETR/denoising-training
+    lineage, added to HuggingFace Transformers with no CUDA compilation
+    required. Its config directly implements DINO's core mechanisms:
+    contrastive denoising (num_denoising, label_noise_ratio,
+    box_noise_scale) and iterative anchor box refinement (with_box_refine).
+  checkpoint: "harshaljanjani/DEIMv2_HGNetv2_N_COCO_Transformers"
+  variant: "Nano (HGNetv2 backbone)"
+
+overrides:
+  # Learned from RT-DETR's NaN-loss issue: DETR-family transformer
+  # decoders are sensitive to the paper's YOLO-tuned lr0=0.01.
+  # Starting conservative from the outset rather than discovering
+  # instability mid-training again.
+  learning_rate: 0.0001
+  patience: 15

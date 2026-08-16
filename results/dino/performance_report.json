@@ -1,0 +1,20 @@
+{
+  "model": "DEIMv2-Nano (documented substitution for DINO)",
+  "substitution_reason": "Official DINO requires CUDA compilation incompatible with this environment",
+  "actual_batch_size_used": 16,
+  "attempt_log": [
+    {
+      "batch_size": 16,
+      "status": "success"
+    }
+  ],
+  "epochs": 200,
+  "learning_rate": 0.0001,
+  "training_time_hours": 1.3866629449526469,
+  "parameters": 3556617,
+  "FPS": 19.31,
+  "model_size_MB": 13.75,
+  "mAP50": 0.9635560512542725,
+  "mAP50_95": 0.6552146673202515,
+  "recall": 0.7675351500511169
+}

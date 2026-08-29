@@ -1,0 +1,148 @@
+{
+  "bootstrap_ci": {
+    "YOLOv8n": {
+      "precision": {
+        "point_estimate": 0.9266,
+        "ci_95_lower": 0.8955,
+        "ci_95_upper": 0.9571
+      },
+      "recall": {
+        "point_estimate": 0.9044,
+        "ci_95_lower": 0.8662,
+        "ci_95_upper": 0.9371
+      },
+      "f1_score": {
+        "point_estimate": 0.9154,
+        "ci_95_lower": 0.8866,
+        "ci_95_upper": 0.9432
+      },
+      "mAP50": {
+        "point_estimate": 0.9201,
+        "ci_95_lower": 0.8611,
+        "ci_95_upper": 0.9661
+      },
+      "mAP50_95": {
+        "point_estimate": 0.6061,
+        "ci_95_lower": 0.5573,
+        "ci_95_upper": 0.6657
+      }
+    },
+    "RT-DETR-L": {
+      "precision": {
+        "point_estimate": 0.94,
+        "ci_95_lower": 0.9061,
+        "ci_95_upper": 0.9691
+      },
+      "recall": {
+        "point_estimate": 0.9625,
+        "ci_95_lower": 0.9341,
+        "ci_95_upper": 0.9861
+      },
+      "f1_score": {
+        "point_estimate": 0.9511,
+        "ci_95_lower": 0.9256,
+        "ci_95_upper": 0.9748
+      },
+      "mAP50": {
+        "point_estimate": 0.9703,
+        "ci_95_lower": 0.9497,
+        "ci_95_upper": 0.9883
+      },
+      "mAP50_95": {
+        "point_estimate": 0.6518,
+        "ci_95_lower": 0.6102,
+        "ci_95_upper": 0.6998
+      }
+    },
+    "DEIMv2-Nano (DINO sub.)": {
+      "precision": {
+        "point_estimate": 0.9133,
+        "ci_95_lower": 0.8779,
+        "ci_95_upper": 0.9446
+      },
+      "recall": {
+        "point_estimate": 0.9352,
+        "ci_95_lower": 0.9038,
+        "ci_95_upper": 0.9635
+      },
+      "f1_score": {
+        "point_estimate": 0.9241,
+        "ci_95_lower": 0.8972,
+        "ci_95_upper": 0.9504
+      },
+      "mAP50": {
+        "point_estimate": 0.9636,
+        "ci_95_lower": 0.9453,
+        "ci_95_upper": 0.9827
+      },
+      "mAP50_95": {
+        "point_estimate": 0.6552,
+        "ci_95_lower": 0.6267,
+        "ci_95_upper": 0.6897
+      }
+    }
+  },
+  "paired_permutation": {
+    "YOLOv8n vs RT-DETR-L": {
+      "observed_mean_diff": -0.0552,
+      "p_value": 0.0001,
+      "effect_size_cohens_d": -0.2554
+    },
+    "YOLOv8n vs DEIMv2-Nano (DINO sub.)": {
+      "observed_mean_diff": -0.0231,
+      "p_value": 0.2097,
+      "effect_size_cohens_d": -0.0909
+    },
+    "RT-DETR-L vs DEIMv2-Nano (DINO sub.)": {
+      "observed_mean_diff": 0.0321,
+      "p_value": 0.0146,
+      "effect_size_cohens_d": 0.1701
+    }
+  },
+  "wilcoxon": {
+    "YOLOv8n vs RT-DETR-L": {
+      "statistic": 88.5,
+      "p_value": 0.0005
+    },
+    "YOLOv8n vs DEIMv2-Nano (DINO sub.)": {
+      "statistic": 294.0,
+      "p_value": 0.2618
+    },
+    "RT-DETR-L vs DEIMv2-Nano (DINO sub.)": {
+      "statistic": 133.0,
+      "p_value": 0.0131
+    }
+  },
+  "mcnemar": {
+    "YOLOv8n vs RT-DETR-L": {
+      "contingency_table": {
+        "both_correct": 262,
+        "a_only_correct": 3,
+        "b_only_correct": 20,
+        "both_wrong": 8
+      },
+      "statistic": 3.0,
+      "p_value": 0.0005
+    },
+    "YOLOv8n vs DEIMv2-Nano (DINO sub.)": {
+      "contingency_table": {
+        "both_correct": 256,
+        "a_only_correct": 9,
+        "b_only_correct": 18,
+        "both_wrong": 10
+      },
+      "statistic": 2.3704,
+      "p_value": 0.1237
+    },
+    "RT-DETR-L vs DEIMv2-Nano (DINO sub.)": {
+      "contingency_table": {
+        "both_correct": 271,
+        "a_only_correct": 11,
+        "b_only_correct": 3,
+        "both_wrong": 8
+      },
+      "statistic": 3.0,
+      "p_value": 0.0574
+    }
+  }
+}
